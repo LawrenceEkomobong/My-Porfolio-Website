@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+main {
+  background: #000000;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+h3, h2, h1 {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+}
+
+p {
+  font-family: "Open Sans";
+}
+
+/* ─── BASE (mobile-first: ~310px+) ─── */
+
+.container {
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  background: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin: 50px 16px;
+  border-radius: 15px;
+}
+
+.first-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px 30px;
+}
+
+.first-message p {
+  padding: 5px;
+}
+
+.first-message a {
+  text-align: center;
+  color: white;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icons img {
+  width: 35px;
+  height: 35px;
+}
+
+.my-pics img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.line1 {
+  width: 100%;
+  height: 3px;
+  background: lightgrey;
+  margin-bottom: 30px;
+}
+
+.line2 {
+  width: 100%;
+  height: 3px;
+  background: lightgrey;
+  margin-top: 40px;
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px 10px;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  white-space: nowrap;
+}
+
+.designs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.designs h3 {
+  padding-left: 10px;
+}
+
+.designs p {
+  padding-left: 10px;
+}
+
+.designs img {
+  width: 100%;
+  height: 220px;
+  padding: 10px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.last-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  background: dimgrey;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+}
+
+.last-container p {
+  text-align: center;
+}
+
+.Art-gallery {
+  padding-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  max-width: 260px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  font-size: 13px;
+}
+
+input:focus{
+  border: none;
+  outline: none;
+}
+
+.send a {
+  text-decoration: none;
+  background: white;
+  padding: 5px 50px;
+  border-radius: 10px;
+}
+
+/* ─── SMALL TABLETS / LARGE PHONES (≥480px) ─── */
+
+@media (min-width: 480px) {
+  .container {
+    max-width: 440px;
+    margin: 50px 24px;
+  }
+
+  .my-pics img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .first-message {
+    padding: 0 24px 60px;
+  }
+
+  .designs img {
+    height: 260px;
+    padding: 12px;
+  }
+
+  /* Show skills in a 2-column grid */
+  .languages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 24px;
+  }
+
+  input {
+    max-width: 340px;
+  }
+}
+
+/* ─── TABLETS (≥768px) ─── */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    margin: 60px 32px;
+  }
+
+  .my-pics img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .first-message {
+    padding: 0 40px 60px;
+  }
+
+  .first-message h2 {
+    font-size: 2rem;
+  }
+
+  .first-message h3 {
+    font-size: 1.4rem;
+  }
+
+  /* Skills: 3 columns */
+  .languages {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 32px;
+    gap: 24px;
+  }
+
+  /* Projects: 2-column grid */
+  .designs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 10px 20px;
+  }
+
+  .designs img {
+    height: 200px;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .designs > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    padding: 15px 32px 10px;
+  }
+
+  input {
+    max-width: 460px;
+  }
+
+  .last-container {
+    padding: 30px 40px;
+  }
+}
+
+/* ─── DESKTOP (≥1024px) ─── */
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 900px;
+    margin: 80px 40px;
+  }
+
+  .first-message {
+    padding: 0 60px 70px;
+    max-width: 700px;
+  }
+
+  .first-message h2 {
+    font-size: 2.4rem;
+  }
+
+  .first-message p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Skills: all 5 in a row */
+  .languages {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 40px;
+    gap: 20px;
+  }
+
+  /* Projects: 3-column grid */
+  .designs {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 30px;
+    gap: 16px;
+  }
+
+  .designs img {
+    height: 180px;
+  }
+
+  .menu {
+    padding: 15px 40px 10px;
+  }
+
+  input {
+    max-width: 560px;
+  }
+
+  .last-container {
+    padding: 40px 60px;
+  }
+}
+
+/* ─── LARGE DESKTOP (≥1280px) ─── */
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1100px;
+  }
+
+  .first-message h2 {
+    font-size: 2.8rem;
+  }
+
+  .designs img {
+    height: 210px;
+  }
+
+  .languages {
+    padding: 0 60px;
+  }
+
+  .designs {
+    padding: 10px 40px;
+  }
+}
