@@ -11,8 +11,8 @@
     <header>
       <div class="logo"><h3>Lawrence </h3></div>
       <div class="icons">
-        <img src="img/github-icon.png"/>
-        <img src="img/facebook-icon.png"/>
+        <a href="https://github.com/Smart-cmd-ai"><img src="img/github-icon.png"/></a>
+        <a href="https://www.facebook.com/law.jay.54598"><img src="img/facebook-icon.png"/></a>
         <img src="img/twitter-icon.png"/>
       </div>
     </header>
@@ -89,21 +89,54 @@
       <p>I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.</p>
     </div>
     <div class="contact-right">
-      <input type="text" placeholder="NAME" class="contact-input">
-      <input type="email" placeholder="EMAIL" class="contact-input">
-      <textarea placeholder="MESSAGE" class="contact-textarea"></textarea>
+      <input type="text" placeholder="NAME" name="name" class="contact-input">
+      <input type="email" placeholder="EMAIL" name="email" class="contact-input">
+      <textarea placeholder="message" name="message" class="contact-textarea"></textarea>
       <button class="send-btn">SEND MESSAGE</button>
     </div>
   </div>
   <div class="footer">
     <span class="footer-name">Lawrence Ekomobong</span>
     <div class="footer-icons">
-      <img src="img/github-icon.png"/>
-      <img src="img/facebook-icon.png"/>
+      <a href="https://github.com/Smart-cmd-ai"></a><img src="img/github-icon.png"/></a>
+      <a href="https://www.facebook.com/law.jay.54598"><img src="img/facebook-icon.png"/></a>
       <img src="img/twitter-icon.png"/>
     </div>
   </div>
     </section>
     </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      const SERVICE_ID='service_l1zkrz8';
+      const TEMPLATE_ID='template_bssk34y';
+      const PUBLIC_KEY='X_-sn64XwLluHTdAO';
+      
+// Initialize once
+emailjs.init({ publicKey: PUBLIC_KEY });
+
+// Select your elements
+const contactDiv = document.querySelector('.contact-right');
+const sendBtn = document.querySelector('.send-btn');
+
+// On button click
+sendBtn.addEventListener('click', function () {
+  const templateParams = {
+    name: contactDiv.querySelector('[name="name"]').value,
+    email: contactDiv.querySelector('[name="email"]').value,
+    message: contactDiv.querySelector('[name="message"]').value
+  };
+
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    .then(() => {
+      alert('✅ Message sent successfully!');   // or show your own success message
+      // optional: clear fields
+      contactDiv.querySelectorAll('input, textarea').forEach(el => el.value = '');
+    })
+    .catch((err) => {
+      console.error(err);
+      alert('❌ Failed to send. Check console.');
+    });
+});
+    </script>
 </body>
 </html>
